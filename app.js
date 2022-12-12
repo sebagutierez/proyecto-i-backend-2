@@ -3,13 +3,14 @@ const path = require("path");
 const cookieParser = require("cookie-parser");
 const logger = require("morgan");
 const session = require("express-session");
-const axios = require("axios");
+// const axios = require("axios");
 
 const dotenv = require("dotenv").config();
 
 const indexRouter = require("./routes/index");
 const usersRouter = require("./routes/usuarios");
 const librosRouter = require("./routes/libros");
+const apiRouter = require("./routes/api");
 
 const app = express();
 
@@ -36,6 +37,9 @@ app.use("/usuarios", usersRouter);
 
 // http://localhost:3000/libros
 app.use("/libros", librosRouter);
+
+// http://localhost:3000/poke
+app.use("/poke", apiRouter);
 
 connect();
 

@@ -9,6 +9,7 @@ const consultaAxios = async (req, res) => {
       }
     );
     res.json({ data: respuesta.data, status: respuesta.status });
+    console.log(respuesta.data);
   } catch (error) {
     res.json({ data: error.response.data, status: error.response.status });
   }
